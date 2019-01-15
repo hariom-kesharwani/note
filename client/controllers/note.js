@@ -94,3 +94,15 @@ app.controller('note_list_ctrl', ['$scope', '$http','$state', 'logger','Note','$
         });
     }
 }]);
+
+app.controller('note_detail_ctrl', ['$scope', '$state', 'logger','Note','$stateParams', function($scope, $state, logger,Note,$stateParams) {
+    $scope.note = {};
+    Note.getNoteDetail($stateParams.noteId).get(function (response) {
+        if (response.code == 200) {
+            $scope.note = response.data;
+        }else{
+            logger.logError(response.msg);
+            $state.go("app.note.list")
+        }
+    });
+}]);
