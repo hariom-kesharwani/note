@@ -39,7 +39,8 @@
                                     {{newData.created}}
                             </td>
                             <td data-title="'Actions'" data-title-text="Actions" class="text-right" style="min-width:118px ; ">
-                                    <a ui-sref="app.note.edit_note({ noteId : '{{newData._id}}'})" class="btn m-b-xs btn-sm btn-info btn-addon"><i class="fa fa-edit"></i>Edit</a>
+                                    <a ui-sref="app.note.edit_note({ noteId : '{{newData._id}}'})" class="btn m-b-xs btn-sm btn-info btn-addon"><i class="fa fa-edit"></i>Edit</a>+
+                                    <span ng-click="deleteNote(newData._id)" class="btn m-b-xs btn-sm btn-info btn-addon"><i class="fa fa-delete"></i>Delete</span>
                             </td>
                             </tr>
                             </tbody>

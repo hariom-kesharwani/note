@@ -82,4 +82,15 @@ app.controller('note_list_ctrl', ['$scope', '$http','$state', 'logger','Note','$
         $scope.search = '';
         $scope.get_data();
     }
+    $scope.deleteNote = function(noteId){
+        Note.deleteNote(noteId).get(function (response) {
+            if (response.code == 200) {
+                logger.logSuccess(response.msg);
+                $state.go("app.note.list")
+            }else{
+                logger.logError(response.msg);
+                $state.go("app.note.list")
+            }
+        });
+    }
 }]);
