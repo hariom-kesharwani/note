@@ -1,0 +1,37 @@
+<div class="bg-light lter b-b wrapper-md">
+    <h1 class="m-n font-med-bold h3">
+        <a tooltip="Back" title="Back" class="btn btn-sm btn-default w-xxs m-r-sm left" onclick="window.history.back();" >
+            <i class="fa fa-long-arrow-left"></i>
+        </a> Note</h1>
+</div>
+<div class="wrapper-md">
+    <div ng-controller="add_note_ctrl" >
+        <div class="row">
+            <div class="col-sm-12">
+                <form role="form" class="form-validation" name="add_note_form">
+                    <div class="panel panel-default" style="margin-bottom: 0">
+                        <div class="modal-header service_tab_forms_header">
+                            <span class="h4" ng-if="isUpdate==false">Add note</span>
+                            <span class="h4" ng-if="isUpdate==true">Update note</span>
+
+                        </div>
+                        <div class="panel-body">
+                            <div class="form-group pull-in clearfix">
+                                <div class="col-sm-6">
+                                    <label>Text</label><span class="required">*</span>
+                                    <input type="text" class="form-control" ng-model="note.text" ng-maxlength="50" required >   
+                                </div>
+                            </div>
+                        </div>
+                        <footer class="panel-footer text-right bg-light lter">
+                                <button type="submit" ng-click="addNote()" class="btn btn-success" data-ng-disabled="add_note_form.$invalid">Submit</button>
+                        </footer>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+ 
+
